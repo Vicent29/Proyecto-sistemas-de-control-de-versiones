@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+ 
+if [ `git symbolic-ref --short HEAD` = "hotfix" ]
+then
+ if grep "A corregir por:" .git/COMMIT_EDITMSG
+ then
+   exit 0;
+ else
+     echo "El mensaje del commit no es aceptado, deben contener 'A corregir por:'";
+     echo "Porfabor, introduca el mensaje correctamente y vuelve a intentarlo";
+     exit 1;
+ fi
+fi
