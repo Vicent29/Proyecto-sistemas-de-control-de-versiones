@@ -1,0 +1,8 @@
+{
+    "plugins": [ "html" ],
+    "settings": {
+        "html/html-extensions": [".html"], //para aplicarlo aquellos archivos con extensión html
+        "html/indent": "tab", //tiene que estar identado con una tabulación
+        "html/report-bad-indent": "error" //para que muestre el error en caso de no estar bien identado
+    }
+}
