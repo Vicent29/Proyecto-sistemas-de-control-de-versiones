@@ -1,0 +1,103 @@
+html {
+  position: sticky;
+  left: 5%;
+  width: 90%;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25% ;
+    grid-template-rows: 70px 70px; 
+    grid-auto-flow: row;
+    grid-template-areas:
+      "cab cab cab cab"
+      "home cont estilo atr";
+    background-color: rgb(173, 221, 221);
+}
+
+#cabecera{
+    grid-area: cab;
+    grid-column: 1/5;
+    grid-row: 1/2;
+    text-align: center; 
+
+}
+
+#div_home{
+    grid-area: home;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border: 2px solid gray;
+    border-right-width:1px;
+    font-size: large;
+}
+#div_cont{
+  grid-area: cont;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border: 2px solid gray;
+  border-left-width:1px;
+  font-size: large;
+
+}
+#div_style{
+  grid-area: estilo;
+  grid-column: 3/4;
+  grid-row: 2/3;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border: 2px solid gray;
+  border-left-width:1px;
+  font-size: large;
+}
+#div_mod{
+  grid-area: atr;
+  grid-column: 4/5;
+  grid-row: 2/3;
+  text-align: center;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border: 2px solid gray;
+  border-left-width:1px;
+  font-size: large;
+}
+
+section {
+  height: 600px;
+}
+
+footer {
+  display: flex;
+  color: white;
+  background-color: black;
+  font-size: larger;
+  justify-content: center
+}
+
+a{
+  text-decoration: none;
+}
+ 
+footer a {
+  color:rgb(222, 177, 104);
+}
+
+header a {
+  color: white;
+  font-size: larger;
+}
