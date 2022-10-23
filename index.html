@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/faticon.png" type="image/x-icon">
+    <title>Documentación Metodologia Git Flow</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div id="cabecera">
+            <h1><i><u>Proyecto Metodologia Git Hub</u></i></h1>
+        </div>
+        <div id="div_git"><a href="#flow"><b>Git y Git Flow</b></a></div>
+        <div id="div_user1"><a href="#user1"><b>User-1(Estructura, Hussky)</b></a></div>
+        <div id="div_user2"><a href="#user2"><b>User-2 (Features, Eslint)</b></a></div>
+        <div id="div_user3"><a href="#user3"><b>User-3 (CSS y Release)</b></a></div>
+        <div id="div_user1_2"><a href="#user1_2"><b>User-1 (Hotfix)</b></a></div>
+
+    </header>
+    <div class="all_divs">
+        <div class="all_text">
+            <section id="flow">
+                <h1>¿Que es GIT?</h1>
+                <p>Git es un sistema de control de versiones distribuido, lo que significa que un clon local del
+                    proyecto es
+                    un
+                    repositorio de control de versiones completo. Estos repositorios locales plenamente funcionales
+                    permiten
+                    trabajar sin conexión o de forma remota con facilidad. Los desarrolladores confirman su trabajo
+                    localmente
+                    y, a continuación, sincronizan su copia del repositorio con la copia en el servidor. Este paradigma
+                    es
+                    distinto del control de versiones centralizado, donde los clientes deben sincronizar el código con
+                    un
+                    servidor antes de crear nuevas versiones.</p>
+                <p>La flexibilidad y popularidad de Git hacen que sea una excelente opción para cualquier equipo. Muchos
+                    desarrolladores y graduados universitarios ya saben cómo usar Git. La comunidad de usuarios de Git
+                    ha
+                    creado
+                    recursos para entrenar a desarrolladores y la popularidad de Git facilita la ayuda cuando sea
+                    necesario.
+                    Casi todos los entornos de desarrollo tienen compatibilidad con Git y las herramientas de línea de
+                    comandos
+                    de Git implementadas en cada sistema operativo principal.</p>
+                <h1>Conceptos básicos de Git:</h1>
+                <p>Cada vez que se guarda el trabajo, Git crea una confirmación. Una confirmación es una instantánea de
+                    todos
+                    los archivos en un momento dado. Si un archivo no ha cambiado de una confirmación a la siguiente,
+                    Git
+                    usa el
+                    archivo almacenado anteriormente. Este diseño difiere de otros sistemas que almacenan una versión
+                    inicial de
+                    un archivo y mantienen un registro de deltas a lo largo del tiempo.</p>
+                <img src="/img/git1.png" alt="">
+
+                <h1>La metodologia git Flow:</h1>
+                <p>Es el flujo de trabajo más popular y extendido. Se basa en dos ramas principales con una vida
+                    infinita.
+                    Para
+                    cada tarea que se le asigna a un desarrollador se crea una rama feature en la cual se llevará a cabo
+                    la
+                    tarea. Una vez que ha finalizado, realizará un pull request (validación) contra develop para que
+                    validen
+                    el
+                    código.</p>
+                <p>Pasamos a detallar las dos ramas principales que se utilizan:</p>
+                <ul>
+                    <li> <b>Master</b>: Contiene el código de producción. Todo el código de desarrollo, a través del uso
+                        de
+                        releases, se mergea (fusiona) en esta rama en algún momento.</li>
+                    <li> <b>Develop</b>: Contiene código de pre-producción. Cuando un desarrollador finaliza su feature,
+                        lo
+                        mergea contra esta rama.</li>
+                </ul>
+                <img src="/img/git2.png" alt="">
+                <p>Durante el ciclo de desarrollo, se usan varios tipos de ramas para dar soporte:</p>
+                <ul>
+                    <li><b>Feature</b> : Por cada tarea que se realiza, se crea una nueva rama para trabajar en ella.
+                        Esta
+                        rama
+                        parte de develop.</li>
+                    <li><b>Hotfix</b>: Parte de master. Rama encargada de corregir una incidencia crítica en producción.
+                    </li>
+                    <li><b>Releases</b>: Parte de develop. Rama encargada de generar valor al producto o proyecto.
+                        Contiene
+                        el
+                        código que se desplegará, y una vez que se han probado las features integradas en la release, se
+                        "mergeará" a la rama master.</li>
+                </ul>
+                <h2 class="pros">Pros git Flow:</h2>
+                <ul>
+                    <li>Fácil de comprender el flujo de ramas.</li>
+                    <li>Ideal para <b>productos estables</b> que no requieren de desplegar cambios inmediatamente.</li>
+                    <li>Muy recomendable cuando el equipo tiene todo tipo de desarrolladores. El control de las features
+                        más
+                        la
+                        release hace que el código no se deteriore.</li>
+                    <li>Perfecto para productos <b>open-source</b> en los que pueden colaborar todo tipo de
+                        desarrolladores.
+                    </li>
+                </ul>
+
+                <h2 class="contra">Contras git Flow:</h2>
+                <ul>
+                    <li>No es el más indicado si tu proyecto necesita iterar muy rápido y subir a producción varias
+                        veces al
+                        día
+                        o semana.</li>
+                    <li>En caso de que el proyecto utilice varias herramientas de integración continua, la rama
+                        <b>develop</b>
+                        puede convertirse en una <b>rama redundante de master</b>.
+                    </li>
+                    <li>El uso de la rama master como rama protegida. Muchas herramientas de automatización usan la rama
+                        master
+                        por defecto.</li>
+                    <li>Gran complejidad en las ramas creadas de hotfix y releases. La integración continua elimina la
+                        necesidad
+                        de la creación de estas ramas, facilitando el despliegue.</li>
+                </ul>
+                <h2 class="estruc">ESTRUCTURA VISUAL:</h2>
+                <div class=".estruc_img">
+                    <img src="/img/git3.jpg" alt="">
+                </div>
+            </section>
+            <h1>Porceso realizado en un proyecto con metodolia git Flow:</h1>
+            <p>-En primer lugar el Usuario1 ha creado el repositorio en github con el nombre de <b>"Proyecto sistemas de
+                    control de versiones"</b></p>
+            <img src="/img/foto1.png" alt="">
+
+            <p>-Seguidamente el Usuario1 creará el proyecto en local y lo conectara con el repositorio remoto:</p>
+            <p class="com">git remote add origin <a
+                    href="https://github.com/Vicent29/Proyecto-sistemas-de-control-de-versiones.git">https://github.com/Vicent29/Proyecto-sistemas-de-control-de-versiones.git</a>
+            </p>
+
+            <p>-Seguidamente publicará la rama master en local que estará conectada a la rama master del repositorio
+                remoto.
+            </p>
+            <section id="user1">
+
+                <h2>Trabajo USUARIO-1</h2>
+                <p>-A continuación el Usuario1 creará la plantilla de front-end profesional con la plantilla de <a
+                        href="https://github.com/h5bp/html5-boilerplate">HTML5 Boilerplate</a> con la que realizará el
+                    siguiente
+                    proceso:</p>
+                <ul>
+                    <li class="com">npx create-html5-boilerplate new-site</li>
+                    <li class="com">cd new-site</li>
+                    <li class="com">npm install</li>
+                    <li class="com">npm run start</li>
+                </ul>
+                <img src="/img/foto2.png" alt="">
+
+                <p>-Seguidamente creará la estructura principal de la página web:</p>
+                <img src="img/foto3.png" alt="">
+                <img src="img/foto4.png" alt="">
+
+                <p>-A continuación realizara un commit y subirá el inicio del proyecto al repositorio remoto utilizando
+                    los
+                    siguientes comandos:</p>
+                <ul>
+                    <li class="com">git add .</li>
+                    <li class="com">git commit -m "Inicialización del proyecto USUARIO-1"</li>
+                    <li class="com">git push origin master</li>
+                </ul>
+                <img src="img/foto5.png" alt="">
+                <img src="img/foto6.png" alt="">
+
+                <p>-Seguidamente este mismo usuario se encargará de crear 2 hooks para ello utilizaremos la librería
+                    husky:
+                </p>
+                <ul>
+                    <li>En primer lugar instalaremos la librería husky con el siguiente comando:</li>
+                    <ul>
+                        <li class="com">npm install husky --save-dev</li>
+                        <li class="com">npx husky install</li>
+                    </ul>
+                    <img src="img/foto7.png" alt="">
+                    <img src="img/foto8.png" alt="">
+                    <li>En segundo lugar ya tendremos que trabajar con la creación de los hooks:</li>
+                </ul>
+                <h3>HOOK preparare-commit-msg:</h3>
+                <ul>
+                    <li>Para ellos crearemos el hook preparare-commit-msg para ello vamos a necesitar crearlo y
+                        añadirlo:
+                    </li>
+                    <ul>
+                        <li class="com">npx husky add .husky/preparare-commit-msg</li>
+                        <li class="com">git add .husky/preparare-commit-msg</li>
+                    </ul>
+                    <img src="img/foto9.png" alt="">
+                    <li>Para este hook queremos que compruebe que siempre que se realice un commit en la rama hotfix
+                        exista
+                        una
+                        persona asignada para verificar que no se rompe nada. Para ello, deberá comprobar que el mensaje
+                        de
+                        commit contiene la frase “A corregir por: …”.(A continuación tenemos el script utilizado para
+                        ello y
+                        una
+                        pequeña simulación de su funcionamiento)</li>
+                </ul>
+                <img src="img/foto10.png" alt="">
+                <img src="img/foto11.png" alt="">
+
+                <h3>HOOK post-checkout:</h3>
+                <ul>
+                    <li>Para ellos crearemos el hook pre-commit para ello vamos a necesitar crearlo y añadirlo:</li>
+                    <ul>
+                        <li class="com">npx husky add .husky/post-checkout</li>
+                        <li class="com">git add .husky/post-checkout</li>
+                        <img src="img/foto12.png" alt="">
+                    </ul>
+                    <li>Para este hook queremos que muestre por consola un mensaje con un dibujo hecho con caracteres
+                        ascii
+                        una
+                        vez hagamos el checkout de una rama del proyecto.” (a continuación tenemos el ejemplo de su
+                        funcionamiento:)</li>
+                    <img src="img/foto13.png" alt="">
+                    <img src="img/foto14.png" alt="">
+                    <p>(Deberemos de tener en cuenta que ambos hooks tengan permisos de ejecución ya que es posible que
+                        no
+                        nos
+                        funcionen correctamente por este motivo)</p>
+                    <img src="img/foto15.png" alt="">
+                </ul>
+
+                <p>-Para finalizar esta primera parte realizaremos un nuevo commit y realizaremos un push en la rama
+                    master:
+                </p>
+                <img src="img/foto16.png" alt="">
+
+                <p>-Seguidamente se encargará de crear la rama <b> “develop”</b> a partir de la master, esta rama es la
+                    que
+                    utilizaremos para desarrollar el proyecto. Además la subiremos al repositorio remoto para que la
+                    resta
+                    de
+                    compañeros puedan trabajar en ella:</p>
+                <img src="img/foto17.png" alt="">
+                <img src="img/foto18.png" alt="">
+            </section>
+            <section id="user2">
+                <h2>Trabajo USUARIO-2</h2>
+                <p>(Para cada mejora o feature sería recomendable crear una <b>“_isuue”</b> con los cambios que se deben
+                    realizar aunque por mi parte, solo lo voy a crear para la <b>“feture/atributosHTML”</b> porque lo he
+                    pensado
+                    cuando ya tenía el hook y la <b>“feature/contenidoHTML”</b> creadas.)</p>
+                <p>-En primer lugar el Usuario-2 creará un hook el cual se encargará de que antes de cada commit
+                    verifique
+                    el
+                    correcto formato de los archivos html, para conseguir esta funcionalidad en el hook ejecutará el <a
+                        href="https://www.npmjs.com/package/eslint-plugin-html">linter eslint</a> aunque tambien
+                    podriamos
+                    utilizar <a href="https://prettier.io/">prettier</a> que no necesita una configuración, para ello
+                    utilizaremos los siguientes comandos para instalarlo:</p>
+                <ul>
+                    <li class="com">npm install --save-dev eslint-plugin-html</li>
+                </ul>
+                <img src="img/foto19.png" alt="">
+
+                <p>-Seguidamente hemos configurado el “eslint”, para ello crearemos un archivo llamado “.eslintrc.json”
+                    ,
+                    para
+                    realizar la configuración me he ayudado de la siguiente <a
+                        href="https://github.com/BenoitZugmeyer/eslint-plugin-html">web</a> .</p>
+                <img src="img/foto20.png" alt="">
+
+                <p>-Por último comprobaremos correctamente antes de añadirlo al pre-commit, para ello cambiaremos la
+                    identación
+                    en el <b>“index.html”</b> y debería detectarlo:</p>
+                <img src="img/foto21.png" alt="">
+
+                <p>-A continuación crearemos el hook de pre-commit el cual se encargará de ejecutar la configuración de
+                    eslint:
+                </p>
+                <ul>
+                    <li class="com">npx husky add .husky/pre-commit</li>
+                    <li class="com">npx husky add .husky/pre-commit</li>
+                </ul>
+                <img src="img/foto22.png" alt=""><br>
+                <img src="img/foto23.png" alt="">
+
+                <p>-Una vez terminado toda parte del eslint, realizaremos un push a <b>“develop”</b></p>
+                <img src="img/foto24.png" alt="">
+                <img src="img/foto25.png" alt="">
+
+                <p>-Para este usuario también crearemos 2 features, cada una de ellas llevará su respectivo contenido
+                    mejora
+                    del
+                    código.</p>
+                <ul>
+                    <li class="com">feature/contenidoHTML</li>
+                    <li class="com">feature/atributosHTML</li>
+                </ul>
+
+                <p>-Estas 2 features saldrán de la branch de develop, por lo que deberemos de crearlas posicionandonos
+                    en
+                    develop previamente:</p>
+                <img src="img/foto26.png" alt="">
+
+                <h3>Branch feature/contenidoHTML:</h3>
+                <p>-En la branch <b>“feature/contenidoHTML”</b> es la cual se creará la sección de <b>“Modificar
+                        contenido
+                        HTML”</b>, la cual crearemos una nueva <b>“section” </b> para este contenido y actualizarnos el
+                    <b>"nav"</b> de la cabecera:
+                </p>
+                <img src="img/foto27.png" alt="">
+                <img src="img/foto28.png" alt="">
+                <img src="img/foto29.png" alt="">
+
+                <p>-Una vez terminado la feature, deberemos de subirla al repositorio remoto, para ello utilizaremos los
+                    comandos de la siguiente imagen:</p>
+                <img src="img/foto30.png" alt="">
+
+                <p>-Una vez que la branch “feature/contenidoHTML” se encuentra en el repositorio remoto deberemos de
+                    mergearla a
+                    la “develop” para ello realizaremos una pull request:</p>
+                <img src="img/foto31.png" alt="">
+
+                <p>-Una vez terminado con la rama “feature/contenidoHTML” eliminaremos la rama ya que la metodología de
+                    git
+                    Flow
+                    recomienda ir borrando aquellas features terminadas para que no haya un exceso de branches
+                    innecesarias:
+                </p>
+                <img src="img/foto32.png" alt="">
+                <p>-Por otra parte deberemos de hacer un git pull en “develop” para que se actualizan los cambio
+                    mercados en
+                    el
+                    repositorio remoto y borrar la branch en local si lo deseamos.</p>
+
+                <h3>Branch feature/atributosHTML:</h3>
+                <p>-En primer lugar deberemos de crear un “_issue” con aquellas mejoras que queremos que realiza esta
+                    branch
+                    para que cuando la mergemos asegurarnos que hemos cumplido todos los requisitos que se plantearon
+                    previamente.</p>
+                <img src="img/foto33.png" alt="">
+
+                <p>-En la branch “feature/contenidoHTML” es la cual se creará la sección de “Modificar atributos HTML”,
+                    la
+                    cual
+                    crearemos una nueva “section” para este contenido y actualizarnos el “nav” de la cabecera:</p>
+                <img src="img/foto34.png" alt="">
+                <img src="img/foto35.png" alt="">
+
+                <p>-Una vez terminado la feature, deberemos de subirla al repositorio remoto, para ello utilizaremos los
+                    comandos de la siguiente imagen:</p>
+                <img src="img/foto36.png" alt="">
+
+                <p>-Una vez que la branch “feature/atributosHTML” se encuentra en el repositorio remoto deberemos de
+                    mergearla a
+                    la “develop” para ello realizaremos una pull request:</p>
+                <img src="img/foto37.png" alt="">
+                <img src="img/foto38.png" alt="">
+
+                <p>-Por último borraremos la branch de “feature/atributosHTML” ya que su funcionalidades ya han sido
+                    merengadas
+                    a dvelop y su utilidad ya no es necesaria</p>
+                <img src="img/foto39.png" alt="">
+                <p>-Para finalizar esta feature nos posicionamos en la branch develop y realizaremos un pull para
+                    actualizar
+                    los
+                    cambios</p>
+            </section>
+
+            <section id="user3">
+                <h2>Trabajo USUARIO-3</h2>
+                <p>-En primer lugar deberemos de crear un “_issue” con aquellas mejoras que queremos que realiza esta
+                    branch
+                    para que cuando la mergemos asegurarnos que hemos cumplido todos los requisitos que se plantearon
+                    previamente.</p>
+                <img src="img/foto40.png" alt="">
+
+                <h3>Branch feature/estilosCSS:</h3>
+                <p>-Para empezar nos posicionamos en la branch <b>“develop”</b> y realizaremos una nueva branch con el
+                    nombre de
+                    <b>“feture/estilosCSS”</b> en la cual se creará la sección de <b>“Modificar estilos CSS”</b>, la
+                    cual
+                    crearemos una nueva <b>“section”</b> para este contenido y actualizarnos el <b>“nav”</b> de la
+                    cabecera:
+                </p>
+                <img src="img/foto41.png" alt="">
+                <img src="img/foto42.png" alt="">
+
+                <p>-Además le añadiremos algo de CSS a la página completa:</p>
+                <img src="img/foto43.png" alt="">
+
+                <p>-Una vez terminado la feature, deberemos de subirla al repositorio remoto, para ello utilizaremos los
+                    comandos de la siguiente imagen:</p>
+                <img src="img/foto44.png" alt="">
+                <p>-Una vez que la branch “feature/estilosCSS” se encuentra en el repositorio remoto deberemos de
+                    mergearla
+                    a la
+                    “develop” para ello realizaremos una pull request y comprobaremos que cumple con los requisitos
+                    implementados en la _issue #5:</p>
+                <img src="img/foto45.png" alt="">
+                <img src="img/foto46.png" alt="">
+                <img src="img/foto47.png" alt="">
+
+                <p>-Por último eliminaremos la <b>feture/estilosCSS</b> porque ya no nos resultará útil</p>
+                <img src="img/foto48.png" alt="">
+
+                <p>-Como siempre cuando terminemos una feture y la mergeamos en el repositorio remoto debemos de hacer
+                    un
+                    pull
+                    en el repositorio local posicionandonos en “develop” para poder tener los mismos cambios tanto en
+                    local
+                    como
+                    en remoto:</p>
+                <img src="img/foto49.png" alt="">
+
+                <h3>Release V1.0:</h3>
+                <p>-Por último el USUARIO-3 también se encargará de crear una nueva release:
+                    En primer lugar, nos colocaremos en la rama de “develop” crearemos una nueva branch llamada
+                    “Release/v1”
+                </p>
+                <img src="img/foto50.png" alt="">
+
+                <p>A continuación realizaremos un commit con el contenido completo:</p>
+                <img src="img/foto51.png" alt="">
+
+                <p>En tercer lugar crearemos un tag <b>“v1.0”</b> y se lo añadiremos al commit creado anteriormente
+                    (utilizaremos el <b>git log –oneline</b> para saber el id del commit ):</p>
+                <img src="img/foto52.png" alt="">
+                <p>Y creamos el tag asignándole el id del commit:</p>
+                <img src="img/foto53.png" alt="">
+                <p>Por último subiremos el relase junto con tag al github:</p>
+                <img src="img/foto54.png" alt="">
+                <p>En cuarto lugar en el github realizaremos una <b>“new release”</b> con el tag <b>v1.0</b>:</p>
+                <img src="img/foto55.png" alt="">
+                <img src="img/foto56.png" alt="">
+                <img src="img/foto57.png" alt="">
+
+                <p>Para finalizar la parte tendremos que realizar un pull rquest desde la branch de <b>“release/v1”</b>
+                    hacía
+                    <b>“master”</b> y de <b>“release/v1”</b> hacia <b>“develop”</b> aunque como la tenemos actualizada
+                    porque no
+                    hemos hecho ningún cambio no será necesario.
+                </p>
+                <img src="img/foto58.png" alt="">
+                <img src="img/foto59.png" alt="">
+
+                <p>En último lugar realizaremos un pull colocandonos en la rama main para actualizar el contenido local
+                    del
+                    remoto:</p>
+                <img src="img/foto60.png" alt="">
+            </section>
+
+            <section id="user1_2">
+                <h2>Trabajo extra USUARIO-1 / HOTFIX:</h2>
+                <p>-En último lugar el USUARIO-1 quiere realizar una mejoras de la sección del contenido creada por el
+                    USUARIO-2. Para ello, crea un hotfix ( <b>hotfix/mejorasV_1_0</b> ) que efectúa dicha mejora. </p>
+                <p>Para realizar esta hotfix nos colocaremos en la branch <b>“master”</b> y desde esta crearemos la
+                    nueva
+                    rama:
+                </p>
+                <img src="img/foto61.png" alt="">
+                <img src="img/foto62.png" alt="">
+                <p>Una vez terminado la hotfix, deberemos de subirla al repositorio remoto, para ello utilizaremos los
+                    comandos
+                    de la siguiente imagen:</p>
+                <img src="img/foto63.png" alt="">
+                <p>He tenido que volverlo hacer porque en él “prepare-commit-msg” la rama la cual comprobaba era
+                    <b>“hotfix”</b>
+                    y debería de ser <b>hotfix/mejorasV_1_0</b> por lo que lo hemos corregido y hemos vuelto hacer todo
+                    el
+                    proceso aunque en github estar repetido
+                </p>
+                <img src="img/foto64.png" alt="">
+                <p>Por último en realizaremos un pull-request de la <b>“hotfix”</b> hacia la <b>“master”</b> y de la
+                    <b>“hotfix”</b> a la <b>“develop”</b>:
+                </p>
+                <img src="img/foto65.png" alt="">
+                <img src="img/foto66.png" alt="">
+                <img src="img/foto67.png" alt="">
+                <p>Cuando tengamos las rama master como la develop actualizadas ya podremos borrar la rama hotfix porque
+                    no
+                    le
+                    daremos más utilidad:</p>
+                <img src="img/foto68.png" alt="">
+            </section>
+        </div>
+    </div>
+    <footer>
+        <p>&copy;2021 Designed and Developed by
+            <a href="https://github.com/Vicent29">Vicent Esteve Ferre </a>
+        </p>
+    </footer>
+</body>
+
+</html>
