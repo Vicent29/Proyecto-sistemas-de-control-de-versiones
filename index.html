@@ -25,41 +25,88 @@
 </head>
 
 <body>
-
-  <!-- Add your site or application content here -->
   <header>
     <div id="cabecera">
       <h1>Proyecto Control de Versiones 2 DAW</h1>
     </div>
-    <div id="div_home"><a href=""><b>Home</b></a></div>
-    <div id="div_cont"><a href=""><b></b></a></div>
-    <div id="div_style"><a href=""><b></b></a></div>
-    <div id="div_mod"><a href=""><b></b></a></div>
-</header>
-<section>
-  <h2><i>Curso JavaScript para principiantes</i></h2>
-  <p>JavaScript es un lenguaje de programación o de secuencias de comandos que te permite implementar funciones
-    complejas en páginas web, cada vez que una página web hace algo más que sentarse allí y mostrar información
-    estática para que la veas, muestra oportunas actualizaciones de contenido, mapas interactivos, animación de
-    Gráficos 2D/3D, desplazamiento de máquinas reproductoras de vídeo, etc., puedes apostar que probablemente
-    JavaScript está involucrado. Es la tercera capa del pastel de las tecnologías web estándar, dos de las cuales
-    (HTML y CSS) hemos cubierto con mucho más detalle en otras partes del Área de aprendizaje.</p>
-  <img src="./img/js_example.png" alt="Js Example">
-</section>
-<footer>
-  <p>&copy;2021 Designed and Developed by
-    <a href="https://github.com/Vicent29">Vicent Esteve Ferre </a>
-</p>
-</footer>
+    <div id="div_home"><a href="#home"><b>Home</b></a></div>
+    <div id="div_cont"><a href="#modificar"><b>Modificar contenido html</b></a></div>
+    <div id="div_style"><a href="#estilos"><b>Modificar estilos CSS</b></a></div>
+    <div id="div_mod"><a href="#atr_html"><b>Modificar atributos HTML</b></a></div>
+  </header>
+  <section id="home">
+    <h2><i>Curso JavaScript para principiantes</i></h2>
+    <p>JavaScript es un lenguaje de programación o de secuencias de comandos que te permite implementar funciones
+      complejas en páginas web, cada vez que una página web hace algo más que sentarse allí y mostrar información
+      estática para que la veas, muestra oportunas actualizaciones de contenido, mapas interactivos, animación de
+      Gráficos 2D/3D, desplazamiento de máquinas reproductoras de vídeo, etc., puedes apostar que probablemente
+      JavaScript está involucrado. Es la tercera capa del pastel de las tecnologías web estándar, dos de las cuales
+      (HTML y CSS) hemos cubierto con mucho más detalle en otras partes del Área de aprendizaje.</p>
+    <img src="./img/js_example.png" alt="Js Example">
+  </section>
+  <section id="modificar">
+    <h2><i>Ejemplos implementando html y js:</i></h2>
+    <p>En este tutorial te mostraremos cómo incluir JavaScript en HTML. Al comienzo incluiremos una breve introducción a
+      JavaScript, mientras que el resto de la guía se enfocará en varias formas de insertar JavaScript en HTML.
+
+      Si quieres mostrar contenido estático, por ejemplo, un conjunto de imágenes, HTML puede hacer el trabajo por ti.
+      Sin embargo, las páginas estáticas lentamente se están convirtiendo en una cosa del pasado. La mayoría del
+      contenido hoy en día es interactivo e incluye presentaciones de diapositivas llamativas, formularios y menús.
+      Estas mejoran la experiencia del usuario y le agregan dinamismo al sitio web. Esto se logra con los lenguajes de
+      script y JavaScript es uno de los más famosos en este sentido, ya que le permite a los desarrolladores crear
+      sitios web que interactúan con el usuario y viceversa. A pesar de que hay muchos otros lenguajes disponibles,
+      ninguno de ellos es tan popular como JavaScript. Y para utilizarlo en su mayor potencial, se usa en conjunto con
+      HTML.</p>
+    <p id="demo">JavaScript can change HTML content.</p>
+    <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+  </section>
+  <section id="atr_html">
+    <h2><i>Atributos HTML principales:</i></h2>
+    <p>La mayoría de elementos pueden tomar cualquiera de varios de los atributos comunes:</p>
+    <ul>
+      <li>El atributo <b>id</b> (identidad) proporciona un identificador único en el ámbito de todo el documento para un
+        elemento.Este puede ser utilizado como selector CSS para proporcionar propiedades presentationales, por los
+        navegadores para centrar la atención en el elemento concreto, o por scripts (guiones) para alterar los
+        contenidos o la presentación de un elemento</li>
+      <li>El atributo <b>class</b> proporciona una manera de clasificar elementos similares.Esto puede ser utilizado
+        para propósitos semánticos, o para propósitos de presentación. Semantically, por ejemplo, las clases se utilizan
+        en microformatos. Presentacionalmente, por ejemplo, un documento HTML podría utilizar la
+        designaciónclass="notation" , para indicar que todos los elementos con esta clase de valor están subordinados al
+        texto principal del documento. </li>
+      <li>Un autor puede utilizar propiedades no presentacionales de código atribucional de style para un elemento
+        particular.El atributo de estilo se puede utilizar en cualquier elemento de HTML ( se validará en cualquier
+        elemento HTML; aun así, no es necesariamente útil). Se consiera mejor práctica usar los atributos iddo classde
+        un elemento para seleccionar el elemento con una stylesheet (hoja de estilo), aunque a veces esto puede ser
+        demasiado pesado para una aplicación de propiedades de estilo simple y específico o ad hoc.</li>
+      <li>El atributo de <b>title</b> (título) se suele usar para unir explicación subtextual a un elemento. En la
+        mayoría de los navegadores, este atributo se muestra como lo que a menudo se llama un tooltip o globo.
+    </ul>
+    </ul>
+    <img src="./img/atributos_ejemplo.png" alt="Ejeplos atributos">
+  </section>
+  <section id="estilos">
+    <h2><i>Implementación del los estilos CSS en el proyecto:</i></h2>
+    <p>Cuando se habla de apariencia estética o cambios visuales de una web siempre se mencionan los estilos CSS. Vamos
+      a explicar un poco qué son y para qué sirven. CSS es el lenguaje para describir la presentación de páginas web,
+      por ejemplo los colores, el diseño y las fuentes. Nos permite adaptar la presentación a las diferentes necesidades
+      y tipos de dispositivos. El CSS es independiente al HTML y se puede utilizar con cualquier lenguaje de marcado
+      basado en XML. La separación del código HTML de CSS hace que sea más sencillo mantener los sitios, y las hojas de
+      estilo que influyen en una o varias páginas. Esto se conoce como la separación de la estructura de la
+      presentación.
+
+      Los estilos CSS son reglas que se definen para los elementos HTML. Dentro de un archivo CSS podemos incluir
+      infinitas reglas, y cada una se puede aplicar a varios selectores diferentes y cada declaración puede incluir
+      tantos pares propiedad/valor como sean necesarios.</p>
+    <img src="./img/ejemplos_css.png" alt="ejemplo estilos CSS">
+  </section>
+  <footer>
+    <p>&copy;2021 Designed and Developed by
+      <a href="https://github.com/Vicent29">Vicent Esteve Ferre </a>
+    </p>
+  </footer>
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
