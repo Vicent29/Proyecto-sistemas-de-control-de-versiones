@@ -31,8 +31,8 @@
     </div>
     <div id="div_home"><a href="#home"><b>Home</b></a></div>
     <div id="div_cont"><a href="#modificar"><b>Modificar contenido html</b></a></div>
-    <div id="div_style"><a href=""><b></b></a></div>
-    <div id="div_mod"><a href=""><b></b></a></div>
+    <div id="div_style"><a href="#"><b></b></a></div>
+    <div id="div_mod"><a href="#atr_html"><b>Modificar atributos HTML</b></a></div>
   </header>
   <section id="home">
     <h2><i>Curso JavaScript para principiantes</i></h2>
@@ -59,6 +59,17 @@
       HTML.</p>
     <p id="demo">JavaScript can change HTML content.</p>
     <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+  </section>
+  <section id="atr_html">
+    <h2><i>Atributos HTML principales:</i></h2>
+    <p>La mayoría de elementos pueden tomar cualquiera de varios de los atributos comunes:</p>
+    <ul>
+      <li>El atributo <b>id</b>  (identidad) proporciona un identificador único en el ámbito de todo el documento para un elemento.Este puede ser utilizado como selector CSS para proporcionar propiedades presentationales, por los navegadores para centrar la atención en el elemento concreto, o por scripts (guiones) para alterar los contenidos o la presentación de un elemento</li>
+      <li>El atributo <b>class</b> proporciona una manera de clasificar elementos similares.Esto puede ser utilizado para propósitos semánticos, o para propósitos de presentación. Semantically, por ejemplo, las clases se utilizan en microformatos. Presentacionalmente, por ejemplo, un documento HTML podría utilizar la designaciónclass="notation" , para indicar que todos los elementos con esta clase de valor están subordinados al texto principal del documento. </li>
+      <li>Un autor puede utilizar propiedades no presentacionales de código atribucional de style para un elemento particular.El atributo de estilo se puede utilizar en cualquier elemento de HTML ( se validará en cualquier elemento HTML; aun así, no es necesariamente útil). Se consiera mejor práctica usar los atributos iddo classde un elemento para seleccionar el elemento con una stylesheet (hoja de estilo), aunque a veces esto puede ser demasiado pesado para una aplicación de propiedades de estilo simple y específico o ad hoc.</li>
+      <li>El atributo de <b>title</b> (título) se suele usar para unir explicación subtextual a un elemento. En la mayoría de los navegadores, este atributo se muestra como lo que a menudo se llama un tooltip o globo.</ul>
+    </ul>
+    <img src="./img/atributos_ejemplo.png" alt="Ejeplos atributos">
   </section>
   <footer>
     <p>&copy;2021 Designed and Developed by
