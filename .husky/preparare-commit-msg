@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
  
-if [ `git symbolic-ref --short HEAD` = "hotfix" ]
+if [ `git symbolic-ref --short HEAD` = "hotfix/mejorasV_1_0" ]
 then
  if grep "A corregir por:" .git/COMMIT_EDITMSG
  then
