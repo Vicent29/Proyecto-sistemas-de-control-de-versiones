@@ -25,19 +25,40 @@
 </head>
 
 <body>
-
-  <!-- Add your site or application content here -->
   <header>
     <div id="cabecera">
       <h1>Proyecto Control de Versiones 2 DAW</h1>
     </div>
-    <div id="div_home"><a href=""><b>Home</b></a></div>
-    <div id="div_cont"><a href=""><b></b></a></div>
+    <div id="div_home"><a href="#home"><b>Home</b></a></div>
+    <div id="div_cont"><a href="#modificar"><b>Modificar contenido html</b></a></div>
     <div id="div_style"><a href=""><b></b></a></div>
     <div id="div_mod"><a href=""><b></b></a></div>
   </header>
-  <section>
-    <h2><i>ESTA SEMANA EN EL MENÚ DEL DÍA:</i></h2>
+  <section id="home">
+    <h2><i>Curso JavaScript para principiantes</i></h2>
+    <p>JavaScript es un lenguaje de programación o de secuencias de comandos que te permite implementar funciones
+      complejas en páginas web, cada vez que una página web hace algo más que sentarse allí y mostrar información
+      estática para que la veas, muestra oportunas actualizaciones de contenido, mapas interactivos, animación de
+      Gráficos 2D/3D, desplazamiento de máquinas reproductoras de vídeo, etc., puedes apostar que probablemente
+      JavaScript está involucrado. Es la tercera capa del pastel de las tecnologías web estándar, dos de las cuales
+      (HTML y CSS) hemos cubierto con mucho más detalle en otras partes del Área de aprendizaje.</p>
+    <img src="./img/js_example.png" alt="Js Example">
+  </section>
+  <section id="modificar">
+    <h2><i>Ejemplos implementando html y js:</i></h2>
+    <p>En este tutorial te mostraremos cómo incluir JavaScript en HTML. Al comienzo incluiremos una breve introducción a
+      JavaScript, mientras que el resto de la guía se enfocará en varias formas de insertar JavaScript en HTML.
+
+      Si quieres mostrar contenido estático, por ejemplo, un conjunto de imágenes, HTML puede hacer el trabajo por ti.
+      Sin embargo, las páginas estáticas lentamente se están convirtiendo en una cosa del pasado. La mayoría del
+      contenido hoy en día es interactivo e incluye presentaciones de diapositivas llamativas, formularios y menús.
+      Estas mejoran la experiencia del usuario y le agregan dinamismo al sitio web. Esto se logra con los lenguajes de
+      script y JavaScript es uno de los más famosos en este sentido, ya que le permite a los desarrolladores crear
+      sitios web que interactúan con el usuario y viceversa. A pesar de que hay muchos otros lenguajes disponibles,
+      ninguno de ellos es tan popular como JavaScript. Y para utilizarlo en su mayor potencial, se usa en conjunto con
+      HTML.</p>
+    <p id="demo">JavaScript can change HTML content.</p>
+    <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
   </section>
   <footer>
     <p>&copy;2021 Designed and Developed by
@@ -47,10 +68,7 @@
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
-
-  <script src="https://www.google-analytics.com/analytics.js" async>
-    console.log("pruebas eslint");
-  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>
