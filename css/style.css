@@ -100,3 +100,7 @@ header a {
   color: white;
   font-size: larger;
 }
+
+header a:hover {
+  color: orange;
+}
